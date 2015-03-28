@@ -115,7 +115,7 @@
 				<ul class="nav navbar-nav">
 				<!--ACCUEIL  ACTUALITÉS  PARCOURIR LES COLLECTIONS  EN SAVOIR PLUS POUR EN FAIRE DAVANTAGE  GALERIE  CONTACT-->
 					<li><a href="/ideesculture/web">Accueil</a></li>
-					<li><a href="/ideesculture/web">Actualités</a></li>
+					<li><a href="/ideesculture/web/index.php/actualites">Actualités</a></li>
 <?php
 						print $this->render("pageFormat/browseMenu.php");
 ?>	
