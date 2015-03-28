@@ -88,7 +88,7 @@
 					<span class="icon-bar"></span>
 				</button>
 <?php
-				print caNavLink($this->request, caGetThemeGraphic($this->request, 'ca_nav_logo300.png'), "navbar-brand", "", "","");
+				print caNavLink($this->request, caGetThemeGraphic($this->request, 'nav_logo300.png'), "navbar-brand", "", "","");
 ?>
 			</div>
 
@@ -112,23 +112,26 @@
 						</ul>
 					</li>
 				</ul>
-				<form class="navbar-form navbar-right" role="search" action="<?php print caNavUrl($this->request, '', 'MultiSearch', 'Index'); ?>">
-					<div class="formOutline">
-						<div class="form-group">
-							<input type="text" class="form-control" placeholder="Search" name="search">
-						</div>
-						<button type="submit" class="btn-search"><span class="glyphicon glyphicon-search"></span></button>
-					</div>
-				</form>
-				<ul class="nav navbar-nav navbar-right">
-					<li <?php print ($this->request->getController() == "About") ? 'class="active"' : ''; ?>><?php print caNavLink($this->request, _t("About"), "", "", "About", "Index"); ?></li>
+				<ul class="nav navbar-nav">
+				<!--ACCUEIL  ACTUALITÉS  PARCOURIR LES COLLECTIONS  EN SAVOIR PLUS POUR EN FAIRE DAVANTAGE  GALERIE  CONTACT-->
+					<li><a href="/ideesculture/web">Accueil</a></li>
+					<li><a href="/ideesculture/web">Actualités</a></li>
 <?php
 						print $this->render("pageFormat/browseMenu.php");
 ?>	
-					<li <?php print ($this->request->getController() == "Search") ? 'class="active"' : ''; ?>><?php print caNavLink($this->request, _t("Advanced Search"), "", "", "Search", "advanced/objects"); ?></li>
-					<li <?php print ($this->request->getController() == "Gallery") ? 'class="active"' : ''; ?>><?php print caNavLink($this->request, _t("Gallery"), "", "", "Gallery", "Index"); ?></li>
-					<li <?php print ($this->request->getController() == "Contact") ? 'class="active"' : ''; ?>><?php print caNavLink($this->request, _t("Contact"), "", "", "Contact", "Form"); ?></li>
+					<li><a href="/ideesculture/web/index.php/en-savoir-plus-pour-en-faire-davantage">En savoir plus pour en faire davantage</a></li>
+					<li <?php print ($this->request->getController() == "Gallery") ? 'class="active"' : ''; ?>><?php print caNavLink($this->request, "Galerie", "", "", "Gallery", "Index"); ?></li>
+					<li><a href="/ideesculture/index.php/Contact/Form">Contact</a></li>
 				</ul>
+				<div>
+				<form class="navbar-form" role="search" action="<?php print caNavUrl($this->request, '', 'MultiSearch', 'Index'); ?>">
+						<div class="form-group formOutline">
+							<input type="text" class="form-control" placeholder="Search" name="search">
+						</div>
+						<button type="submit" class="btn-search"><span class="glyphicon glyphicon-search"></span></button>
+				</form>
+				</div>
+
 			</div><!-- /.navbar-collapse -->
 		</div><!-- end container -->
 	</nav>
